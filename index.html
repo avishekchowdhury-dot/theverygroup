@@ -49,7 +49,7 @@ body{font-family:'Inter',sans-serif;font-size:15px;line-height:1.75;color:#0A0F1
 .sel-sub{font-size:clamp(15px,1.4vw,18px);color:rgba(255,255,255,.55);max-width:500px;margin:0 0 12px;line-height:1.65}
 .sel-cta-line{display:inline-block;font-size:clamp(13px,1.1vw,15px);font-weight:600;color:#fff;background:var(--blue);border-radius:100px;padding:10px 24px;margin-bottom:48px;letter-spacing:.02em;cursor:default}
 .sel-h .v{color:var(--very)}
-.tgrid{display:grid;grid-template-columns:1fr;gap:12px;width:100%;max-width:1000px;margin:0}
+.tgrid{display:grid;grid-template-columns:1fr;gap:12px;width:100%;max-width:1000px;margin:0;align-items:stretch}
 @media(min-width:640px){.tgrid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:900px){.tgrid{grid-template-columns:repeat(3,1fr)}}
 .tc{
@@ -60,13 +60,15 @@ body{font-family:'Inter',sans-serif;font-size:15px;line-height:1.75;color:#0A0F1
   text-align:left;
   cursor:pointer;
   transition:background .2s,border-color .2s,transform .15s;
+  display:flex;
+  flex-direction:column;
 }
 .tc:hover{background:rgba(255,255,255,.1);border-color:rgba(37,99,235,.5);transform:translateY(-2px)}
 .tc:active{transform:translateY(0)}
 .tc-dept{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue3);margin-bottom:10px}
 .tc-name{font-size:16px;font-weight:600;color:#fff;margin-bottom:8px;line-height:1.3}
-.tc-jtbd{font-size:14px;color:rgba(255,255,255,.55);line-height:1.6}
-.tc-arrow{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12px;font-weight:600;color:var(--blue3);letter-spacing:.04em;text-transform:uppercase}
+.tc-jtbd{font-size:14px;color:rgba(255,255,255,.55);line-height:1.6;flex:1;margin-bottom:20px}
+.tc-arrow{display:inline-block;font-size:12px;font-weight:600;color:#fff;background:rgba(37,99,235,.15);border:1px solid rgba(37,99,235,.3);border-radius:100px;padding:8px 18px;transition:background .2s,border-color .2s;align-self:flex-start;margin-top:auto}
 .sel-footer{position:relative;z-index:1;padding:24px;text-align:center;font-size:12px;color:rgba(255,255,255,.2);border-top:1px solid rgba(255,255,255,.06)}
 
 /* ─ SHARED HERO ─ */
@@ -240,37 +242,37 @@ a{text-decoration:none}
         <div class="tc-dept">Digital &amp; Ecommerce</div>
         <div class="tc-name">Customers you paid for are being turned away at checkout.</div>
         <div class="tc-jtbd">First-time buyers are 5–7x more likely to be declined — not because they're risky, but because your checkout has no signal on them.<br><br>ASOS fixed this during their re-platform. Very's Skyscape migration is the same window.</div>
-        <div class="tc-arrow">See what that gap looks like →</div>
+        <div class="tc-arrow">See the gap →</div>
       </div>
       <div class="tc" onclick="go('fraud')">
         <div class="tc-dept">Fraud Prevention</div>
         <div class="tc-name">Fraud is reaching the Very Pay credit line too late.</div>
         <div class="tc-jtbd">GLITBot catches what it has seen before. Fraudsters rely on what it hasn't.<br><br>The same identity hitting ASOS or Next last week looks brand new at Very today. That's where the miss happens.</div>
-        <div class="tc-arrow">See where that gap sits →</div>
+        <div class="tc-arrow">See the gap →</div>
       </div>
       <div class="tc" onclick="go('risk')">
         <div class="tc-dept">Risk &amp; Compliance</div>
         <div class="tc-name">Decline decisions you can't fully explain yet.</div>
         <div class="tc-jtbd">In <span id="sel-weeks">11</span> weeks, every declined customer needs a defensible reason.<br><br>Right now, that decision trail isn't strong enough. By the time it is, the window to get ahead is gone.</div>
-        <div class="tc-arrow">See what PS26/1 exposes →</div>
+        <div class="tc-arrow">See the compliance gap →</div>
       </div>
       <div class="tc" onclick="go('commercial')">
         <div class="tc-dept">Commercial &amp; Finance</div>
         <div class="tc-name">Your approval rate is lower than it should be.</div>
         <div class="tc-jtbd">Your approval rate ceiling isn't commercial. It's structural.<br><br>An 8.2% lift at Very's scale is ~£139m in recoverable revenue. That number doesn't show up anywhere today.</div>
-        <div class="tc-arrow">See what's being left on the table →</div>
+        <div class="tc-arrow">See the revenue gap →</div>
       </div>
       <div class="tc" onclick="go('tech')">
         <div class="tc-dept">Technology &amp; Operations</div>
         <div class="tc-name">Checkout decisions are still running on static rules.</div>
         <div class="tc-jtbd">GLITBot automated post-purchase. Checkout decisions are still manual logic.<br><br>Skyscape is the moment to fix that. After go-live, it becomes a rebuild.</div>
-        <div class="tc-arrow">See what changes during migration →</div>
+        <div class="tc-arrow">See the migration gap →</div>
       </div>
       <div class="tc" onclick="go('pricing')">
         <div class="tc-dept">Credit Risk &amp; Pricing</div>
         <div class="tc-name">Your models are learning from the wrong customers.</div>
         <div class="tc-jtbd">Your new pricing model will only be as clean as the data going in.<br><br>Synthetic identities don't show up as fraud first. They show up as bad model assumptions later.</div>
-        <div class="tc-arrow">See where the data breaks →</div>
+        <div class="tc-arrow">See the data gap →</div>
       </div>
     </div>
   </div>
