@@ -251,7 +251,7 @@ a{text-decoration:none}
       <div class="tc" onclick="go('risk')">
         <div class="tc-dept">Risk &amp; Compliance</div>
         <div class="tc-name">Decline decisions you can't fully explain yet.</div>
-        <div class="tc-jtbd">In 11 weeks, every declined customer needs a defensible reason.<br><br>Right now, that decision trail isn't strong enough. By the time it is, the window to get ahead is gone.</div>
+        <div class="tc-jtbd">In <span id="sel-weeks">11</span> weeks, every declined customer needs a defensible reason.<br><br>Right now, that decision trail isn't strong enough. By the time it is, the window to get ahead is gone.</div>
         <div class="tc-arrow">See what PS26/1 exposes →</div>
       </div>
       <div class="tc" onclick="go('commercial')">
@@ -763,6 +763,8 @@ function tick() {
     var w2 = diff <= 0 ? '0' : String(Math.floor(diff / (7 * 24 * 3600 * 1000)));
     rh.textContent = w2 + ' weeks.';
   }
+  var sw = document.getElementById('sel-weeks');
+  if (sw) sw.textContent = diff <= 0 ? '0' : String(Math.floor(diff / (7 * 24 * 3600 * 1000)));
 }
 tick();
 setInterval(tick, 60000);
